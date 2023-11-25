@@ -4,6 +4,7 @@ import googleApps.utils.SharedSparkInstance
 import googleApps.utils.ingestion.CsvReader
 import org.apache.spark.sql.functions._
 import googleApps.utils.schemas.{GooglePlayStoreSchema, GooglePlaystoreUserReviewsSchema, GoogleReviewAvgSentimentPolaritySchema}
+import googleApps.utils.transformations.{Aggregations, DataCleaner}
 
 object App extends App with SharedSparkInstance {
 
@@ -12,10 +13,10 @@ object App extends App with SharedSparkInstance {
   //val df_cast = df_google_reviews.withColumn("Sentiment_Polarity", col("Sentiment_Polarity").cast(DoubleType))
 
   // Replace null values with 0
-  val df_no_null = df_google_reviews.na.fill(0)
+  val df_no_null = DataCleaner(df_google_reviews).removeNan()
 
   // Calculate Avg of "Sentiment_Polarity" grouped by "App"
-  val df_1 = df_no_null.groupBy(col("App")).avg("Sentiment_Polarity")
+  val df_1 = Aggregations(df_no_null).aggregateByApp()
 
   //show result
   df_1.show(40, false)
