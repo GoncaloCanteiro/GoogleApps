@@ -5,7 +5,7 @@ import org.apache.spark.sql.types.{ArrayType, DateType, DoubleType, LongType, St
 object GooglePlayStoreSchema {
   val schema = StructType(Array(
     StructField("App", StringType),
-    StructField("Categories", ArrayType(StringType)),
+    StructField("Category", StringType),
     StructField("Rating", DoubleType),
     StructField("Reviews", LongType),
     StructField("Size", DoubleType),
