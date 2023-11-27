@@ -14,7 +14,7 @@ object Task1 extends App with SharedSparkInstance {
   //val df_cast = df_google_reviews.withColumn("Sentiment_Polarity", col("Sentiment_Polarity").cast(DoubleType))
 
   // Calculate Avg of "Sentiment_Polarity" grouped by "App"
-  val df_google_reviews_aggregations = Aggregations(df_google_reviews).aggregateByApp()
+  val df_google_reviews_aggregations = Aggregations(df_google_reviews).groupByApp()
 
   // Replace null values with 0
   val df_1 = DataCleaner(df_google_reviews_aggregations).replaceNanWithZero()
@@ -26,5 +26,4 @@ object Task1 extends App with SharedSparkInstance {
     .alias("Average_Sentiment_Polarity"))
     .show(40, false)
 
-  spark.stop()
 }
