@@ -8,5 +8,6 @@ trait SharedSparkInstance {
     .builder()
     .appName("GoogleApps")
     .master("local[*]")
+    .config("spark.sql.legacy.timeParserPolicy", "LEGACY")
     .getOrCreate()
 }
