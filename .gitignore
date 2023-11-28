@@ -216,5 +216,9 @@ spark-warehouse/
 # For SBT
 .jvmopts
 
+#Ignore data
+src/main/data/sink
+
+
 
 # End of https://www.toptal.com/developers/gitignore/api/intellij,scala,spark,maven
