@@ -25,4 +25,11 @@ case class Aggregations(df: DataFrame) {
       first("Android Ver").as("Minimum_Android_Version"),
     )
   }
+
+  def groupByGenre(): DataFrame = {
+    df.groupBy("Genre")
+      .agg(countDistinct("App").alias("Count"),
+        avg("Rating").as("Average_Rating"),
+        avg("Average_Sentiment_Polarity").as("Average_Sentiment_Polarity"))
+  }
 }
