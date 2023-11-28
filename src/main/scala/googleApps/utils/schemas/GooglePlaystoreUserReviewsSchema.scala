@@ -1,6 +1,6 @@
 package googleApps.utils.schemas
 
-import org.apache.spark.sql.types.{ArrayType, DateType, DoubleType, LongType, StringType, StructField, StructType}
+import org.apache.spark.sql.types.{ DoubleType, StringType, StructField, StructType}
 
 object GooglePlaystoreUserReviewsSchema {
   val schema = StructType(Array(

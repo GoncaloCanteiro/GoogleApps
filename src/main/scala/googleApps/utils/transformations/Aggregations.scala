@@ -19,7 +19,7 @@ case class Aggregations(df: DataFrame) {
       first("Type").as("Type"),
       first("Price").as("Price"),
       first("Content Rating").as("Content_Rating"),
-      collect_set("Genres").as("Genres"),
+      collect_list("Genres").as("Genres"),
       first("Last Updated").as("Last_Updated"),
       first("Current Ver").as("Current_Version"),
       first("Android Ver").as("Minimum_Android_Version"),
@@ -28,7 +28,7 @@ case class Aggregations(df: DataFrame) {
 
   def groupByGenre(): DataFrame = {
     df.groupBy("Genre")
-      .agg(countDistinct("App").alias("Count"),
+      .agg(count("App").alias("Count"),
         avg("Rating").as("Average_Rating"),
         avg("Average_Sentiment_Polarity").as("Average_Sentiment_Polarity"))
   }

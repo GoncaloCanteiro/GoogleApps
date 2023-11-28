@@ -23,8 +23,8 @@ class Task5 extends App with SharedSparkInstance {
         col("Rating"),
         col("Average_Sentiment_Polarity"))
 
-    // Group by Genre and count the number of Apps for each genre
 
+    // Group by Genre and count the number of Apps for each genre
     val df_04 = Aggregations(explodedDF).groupByGenre()
 
 

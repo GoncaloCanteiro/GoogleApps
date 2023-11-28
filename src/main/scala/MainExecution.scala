@@ -1,6 +1,5 @@
 import googleApps.{Task1, Task2, Task3, Task4, Task5}
 import googleApps.utils.SharedSparkInstance
-import org.apache.spark.sql.functions._
 
 object MainExecution extends App with SharedSparkInstance{
 
@@ -25,7 +24,7 @@ object MainExecution extends App with SharedSparkInstance{
   // Run Task5
   println("Running Task5 ...")
   val df_4 = new Task5().process(df_3_popularity)
-  df_4.show(20, false)
+  df_4.show()
 
   spark.stop()
 

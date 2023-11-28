@@ -33,14 +33,21 @@ class Task3 extends App with SharedSparkInstance {
     // Order reviews desc
     val df_order = df_price.orderBy(col("Reviews").desc)
 
+
+    // split genres by ";" and convert to array of strings
+    val df_change_delimiter = df_order.withColumn("Genres", split(col("Genres"), ";"))
+      .withColumn("Genres", explode(col("Genres")))
+
     // Aggregations
-    val df_aggregations = Aggregations(df_order).aggregateAndGroupByApp()
+    val df_aggregations = Aggregations(df_change_delimiter).aggregateAndGroupByApp()
+
 
     // Convert Last_Updated to Date
     val df_date = df_aggregations.withColumn("Last_Updated", to_date(col("Last_Updated"), "MMMM dd, yyyy").cast("Date"))
 
-    // Convert ";" to ","
-    val df_3 = df_date.withColumn("Genres", expr("transform(genres, x -> regexp_replace(x, '\\s*;\\s*', ','))"))
+
+    // Remove duplicate Genres in the array
+    val df_3 = df_date.withColumn("Genres", array_distinct(col("Genres")))
 
     //Return result
     df_3
