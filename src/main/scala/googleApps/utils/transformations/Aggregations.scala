@@ -10,6 +10,7 @@ case class Aggregations(df: DataFrame) {
   }
 
   def aggregateAndGroupByApp(): DataFrame = {
+
     df.groupBy("App").agg(
       collect_set("Category").as("Categories"),
       first("Rating").as("Rating"),

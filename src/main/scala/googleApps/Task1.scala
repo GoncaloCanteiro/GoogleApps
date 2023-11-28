@@ -12,7 +12,6 @@ class Task1{
   def process(): DataFrame = {
     // Load data from CSV with schema
     val df_google_reviews = CsvReader.loadData("src/main/data/googleplaystore_user_reviews.csv", GooglePlaystoreUserReviewsSchema.schema)
-    //val df_cast = df_google_reviews.withColumn("Sentiment_Polarity", col("Sentiment_Polarity").cast(DoubleType))
 
     // Calculate Avg of "Sentiment_Polarity" grouped by "App"
     val df_google_reviews_aggregations = Aggregations(df_google_reviews).groupByApp()
