@@ -4,10 +4,6 @@ GoogleApps is a Scala and Spark project that enabled me to explore new ways to c
 
 ## Installation
 
-Use [Homebrew](https://formulae.brew.sh/formula/maven) to install maven.
-```bash
-brew install maven
-```
 Use the package manager [Maven](https://maven.apache.org/) to build the project.
 ```bash
 mvn clean install
