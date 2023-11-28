@@ -3,7 +3,7 @@ package googleApps.utils.sink
 import googleApps.utils.SharedSparkInstance
 import org.apache.spark.sql.DataFrame
 
-object CsvSink extends Sink with SharedSparkInstance{
+object CsvSink extends Csv with SharedSparkInstance{
   override def writeData(path: String, df: DataFrame): Unit = {
     df.write
       .mode("overwrite")
