@@ -5,7 +5,7 @@ import org.apache.spark.sql.functions._
 
 class AggregationsTest extends FunSuite {
 
-  private val spark: SparkSession = SparkSession.builder().appName("MySparkJobTest").master("local[2]").getOrCreate()
+  private val spark: SparkSession = SparkSession.builder().appName("AggregationsTest").master("local[2]").getOrCreate()
 
   test("groupByApp should group by App and calculate average Sentiment_Polarity") {
     import spark.implicits._
