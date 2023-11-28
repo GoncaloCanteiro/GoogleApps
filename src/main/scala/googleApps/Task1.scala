@@ -13,11 +13,11 @@ class Task1{
     // Load data from CSV with schema
     val df_google_reviews = CsvReader.loadData("src/main/data/googleplaystore_user_reviews.csv", GooglePlaystoreUserReviewsSchema.schema)
 
-    // Calculate Avg of "Sentiment_Polarity" grouped by "App"
-    val df_google_reviews_aggregations = Aggregations(df_google_reviews).groupByApp()
-
     // Replace null values with 0
-    val df_1 = DataCleaner(df_google_reviews_aggregations).replaceNanWithZero()
+    val df_clean = DataCleaner(df_google_reviews).replaceNanWithZero()
+
+    // Calculate Avg of "Sentiment_Polarity" grouped by "App"
+    val df_1 = Aggregations(df_clean).groupByApp()
 
     //Return df_1 result
     df_1
