@@ -4,12 +4,17 @@ GoogleApps is a Scala and Spark project that enabled me to explore new ways to c
 
 ## Installation
 
-Use the package manager [Maven](https://maven.apache.org/) to build the project.
+To build the project, use the Maven package manager. Open a terminal and navigate to the project directory, then execute the following command:
 ```bash
-mvn clean install
+mvn clean package
 ```
-
+This command will compile the project and create an executable JAR file.
 ## Usage
 
-In order to run all tasks you can run the MainExecution file with the path "src/main/scala/MainExecution.scala"
+After successfully compiling the project, you can run it using the generated JAR file. Use the following command in the terminal:
 
+```bash
+java -jar target/GoogleApps-1.0-SNAPSHOT.jar
+```
+
+Alternatively, you can import the project into your preferred Integrated Development Environment (IDE) and run it from there.
