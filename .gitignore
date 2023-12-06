@@ -217,7 +217,7 @@ spark-warehouse/
 .jvmopts
 
 #Ignore data
-src/main/data/sink
+data/sink
 
 
 

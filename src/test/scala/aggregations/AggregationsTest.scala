@@ -1,4 +1,4 @@
-import googleApps.utils.transformations.Aggregations
+import org.googleApp.utils.transformations.Aggregations
 import org.scalatest.FunSuite
 import org.apache.spark.sql.{DataFrame, SparkSession}
 import org.apache.spark.sql.functions._

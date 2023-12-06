@@ -1,8 +1,8 @@
-package googleApps
+package org.googleApp
 
-import googleApps.utils.SharedSparkInstance
-import googleApps.utils.sink.ParquetSink
 import org.apache.spark.sql.DataFrame
+import org.googleApp.utils.SharedSparkInstance
+import org.googleApp.utils.sink.ParquetSink
 
 class Task4 extends App with SharedSparkInstance {
 
@@ -10,7 +10,7 @@ class Task4 extends App with SharedSparkInstance {
 
     val df_joined = df_1.join(df_3,"App")
 
-    ParquetSink.writeData("src/main/data/sink/join", df_joined)
+    ParquetSink.writeData("data/sink/join", df_joined)
 
     df_joined
   }

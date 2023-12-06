@@ -1,6 +1,6 @@
-package googleApps.utils.sink
+package org.googleApp.utils.sink
 
-import googleApps.utils.SharedSparkInstance
+import org.googleApp.utils.SharedSparkInstance
 import org.apache.spark.sql.DataFrame
 
 object CsvSink extends Csv with SharedSparkInstance{

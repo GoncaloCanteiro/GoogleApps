@@ -1,5 +1,5 @@
 package transformations
-import googleApps.utils.transformations.{ DataCleaner}
+import org.googleApp.utils.transformations.{ DataCleaner}
 import org.scalatest.FunSuite
 import org.apache.spark.sql.{DataFrame, SparkSession}
 

@@ -1,11 +1,10 @@
-package googleApps
+package org.googleApp
 
-import googleApps.utils.SharedSparkInstance
-import googleApps.utils.sink.ParquetSink
-import googleApps.utils.transformations.Aggregations
 import org.apache.spark.sql.DataFrame
-import org.apache.spark.sql.catalyst.dsl.expressions.StringToAttributeConversionHelper
 import org.apache.spark.sql.functions._
+import org.googleApp.utils.SharedSparkInstance
+import org.googleApp.utils.sink.ParquetSink
+import org.googleApp.utils.transformations.Aggregations
 
 
 
@@ -28,7 +27,7 @@ class Task5 extends App with SharedSparkInstance {
     val df_04 = Aggregations(explodedDF).groupByGenre()
 
 
-    ParquetSink.writeDataCompressed("src/main/data/sink/metrics/googleplaystore_metrics", df_04)
+    ParquetSink.writeDataCompressed("data/sink/metrics/googleplaystore_metrics", df_04)
     df_04
   }
 }

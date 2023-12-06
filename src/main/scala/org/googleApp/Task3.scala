@@ -1,15 +1,15 @@
-package googleApps
+package org.googleApp
 
-import googleApps.utils.SharedSparkInstance
-import googleApps.utils.ingestion.CsvReader
-import org.apache.spark.sql.functions._
-import googleApps.utils.transformations.{Aggregations, DataCleaner}
 import org.apache.spark.sql.DataFrame
+import org.apache.spark.sql.functions._
+import org.googleApp.utils.SharedSparkInstance
+import org.googleApp.utils.ingestion.CsvReader
+import org.googleApp.utils.transformations.{Aggregations, DataCleaner}
 
 class Task3 extends App with SharedSparkInstance {
 
   def process(): DataFrame = {
-    val df_googleplaystore = CsvReader.loadDataAutoSchema("src/main/data/googleplaystore.csv")
+    val df_googleplaystore = CsvReader.loadDataAutoSchema("data/googleplaystore.csv")
 
     // cast rating to double
     val df_rating = df_googleplaystore.withColumn("Rating", col("Rating").cast("Double"))

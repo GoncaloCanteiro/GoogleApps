@@ -1,6 +1,6 @@
-package googleApps.utils.ingestion
+package org.googleApp.utils.ingestion
 
-import googleApps.utils.SharedSparkInstance
+import org.googleApp.utils.SharedSparkInstance
 import org.apache.spark.sql.DataFrame
 import org.apache.spark.sql.types.StructType
 

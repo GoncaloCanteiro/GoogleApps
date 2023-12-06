@@ -1,4 +1,4 @@
-package googleApps.utils.ingestion
+package org.googleApp.utils.ingestion
 
 import org.apache.spark.sql.DataFrame
 import org.apache.spark.sql.types.StructType

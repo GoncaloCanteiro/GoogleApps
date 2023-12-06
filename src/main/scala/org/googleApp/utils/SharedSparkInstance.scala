@@ -1,4 +1,4 @@
-package googleApps.utils
+package org.googleApp.utils
 
 import org.apache.spark.sql.SparkSession
 

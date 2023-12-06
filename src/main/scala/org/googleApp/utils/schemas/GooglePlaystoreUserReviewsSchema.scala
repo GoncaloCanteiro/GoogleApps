@@ -1,4 +1,4 @@
-package googleApps.utils.schemas
+package org.googleApp.utils.schemas
 
 import org.apache.spark.sql.types.{ DoubleType, StringType, StructField, StructType}
 

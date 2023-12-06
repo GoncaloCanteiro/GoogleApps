@@ -1,5 +1,6 @@
-import googleApps.{Task1, Task2, Task3, Task4, Task5}
-import googleApps.utils.SharedSparkInstance
+package org.googleApp
+
+import org.googleApp.utils.SharedSparkInstance
 
 object MainExecution extends App with SharedSparkInstance{
 

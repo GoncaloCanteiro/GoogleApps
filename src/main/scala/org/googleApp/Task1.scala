@@ -1,17 +1,17 @@
-package googleApps
+package org.googleApp
 
-import googleApps.utils.ingestion.CsvReader
-import org.apache.spark.sql.functions._
-import googleApps.utils.schemas.GooglePlaystoreUserReviewsSchema
-import googleApps.utils.transformations.{Aggregations, DataCleaner}
 import org.apache.spark.sql.DataFrame
+import org.apache.spark.sql.functions._
+import org.googleApp.utils.ingestion.CsvReader
+import org.googleApp.utils.schemas.GooglePlaystoreUserReviewsSchema
+import org.googleApp.utils.transformations.{Aggregations, DataCleaner}
 
 
 class Task1{
 
   def process(): DataFrame = {
     // Load data from CSV with schema
-    val df_google_reviews = CsvReader.loadData("src/main/data/googleplaystore_user_reviews.csv", GooglePlaystoreUserReviewsSchema.schema)
+    val df_google_reviews = CsvReader.loadData("data/googleplaystore_user_reviews.csv", GooglePlaystoreUserReviewsSchema.schema)
 
     // Replace null values with 0
     val df_clean = DataCleaner(df_google_reviews).replaceNanWithZero()
