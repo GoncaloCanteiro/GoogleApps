@@ -18,3 +18,13 @@ java -jar target/GoogleApps-1.0-SNAPSHOT.jar
 ```
 
 Alternatively, you can import the project into your preferred Integrated Development Environment (IDE) and run it from there.
+
+## Requirements
+
+Before you proceed with the installation and usage of GoogleApps, ensure that your development environment meets the following requirements:
+
+- **Maven**: The project uses maven for package management. If you don't have Maven installed, you can download and install it by visiting the official [website](https://maven.apache.org/download.cgi) 
+
+- **Scala Version**: The project is designed to work with Scala version 2.12.16. If you don't have Scala installed, you can download and install it by visiting the official [website](https://docs.scala-lang.org/getting-started/index.html).
+
+- **Java Version**: GoogleApps is compatible with Java 8. Make sure you have Java 8 installed on your system. 
