@@ -27,7 +27,7 @@ class AggregationsTest extends FunSuite {
     ).toDF("App", "avg(Sentiment_Polarity)")
 
     // Apply the function to the input data
-    val result: DataFrame = Aggregations(inputData).groupByApp()
+    val result: DataFrame = Aggregations(inputData).groupByApp().orderBy(col("App"))
 
     // Assert that the result matches the expected output
     assert(result.collectAsList() === expectedOutput.collectAsList())
